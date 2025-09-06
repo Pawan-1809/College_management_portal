@@ -4,6 +4,10 @@ This is a Student Attendance System Developed for Educational Purpose using Pyth
 
 And if you like this project then ADD a STAR ⭐️ to this project 👆
 
+## System Preview
+
+![College Management Portal Dashboard](screenshots/dashboard.png)
+
 ## Features of this Project
 
 ### A. Admin Users Can
