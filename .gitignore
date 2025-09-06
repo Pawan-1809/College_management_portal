@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.pdb
+*.egg-info/
+
+# Django
+*.log
+db.sqlite3
+media/
+staticfiles/
+
+# VS Code
+.vscode/
+
+# Environments
+.env
+.venv/
+venv/
+ENV/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Migrations
+*/migrations/__pycache__/
+*/migrations/*.pyc
+
+# Node
+node_modules/
+
+# Others
+*.bak
+*.swp
+*.swo
+
+# Ignore test coverage
+htmlcov/
+.coverage
+coverage.xml
+
+# Ignore compiled files
+*.so
+
+# Ignore backup files
+*~
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
