@@ -4,8 +4,14 @@ set -o errexit
 
 echo "🚀 Starting Render deployment build process..."
 
+echo "🔧 Upgrading pip..."
+pip install --upgrade pip
+
 echo "🔧 Installing Python dependencies..."
 pip install -r requirements.txt
+
+echo "🔍 Verifying PostgreSQL adapter..."
+python -c "import psycopg2; print('✅ psycopg2 installed successfully')"
 
 echo "📦 Collecting static files..."
 python manage.py collectstatic --no-input

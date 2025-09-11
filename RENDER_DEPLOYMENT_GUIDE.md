@@ -102,8 +102,9 @@ A default superuser is created with:
 ### Common Issues
 
 1. **Build Fails with Python Version Error**
-   - Render uses Python 3.11.10 as specified in `runtime.txt`
+   - Render uses Python 3.9.19 as specified in `runtime.txt`
    - If you see version conflicts, check `requirements.txt`
+   - Django 3.2.25 is specifically chosen for Python 3.9 compatibility
 
 2. **Database Connection Error**
    - Verify `DATABASE_URL` is correctly set
