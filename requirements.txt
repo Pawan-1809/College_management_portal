@@ -1,6 +1,6 @@
-# Core Django
-Django==3.2.23
-asgiref==3.6.0
+# Core Django (compatible with Python 3.13)
+Django==4.2.16
+asgiref==3.7.2
 
 # Database
 dj-database-url==2.1.0
