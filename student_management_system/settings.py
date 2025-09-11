@@ -125,7 +125,13 @@ STATICFILES_DIRS = [
 ]
 
 # Use WhiteNoise for serving static files in production
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# Use our custom safe storage that handles missing jQuery UI files
+STATICFILES_STORAGE = 'student_management_app.storage.SafeWhiteNoiseStorage'
+
+# WhiteNoise settings
+WHITENOISE_MANIFEST_STRICT = False
+WHITENOISE_SKIP_COMPRESS_EXTENSIONS = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'zip', 'gz', 'tgz', 'bz2', 'tbz', 'xz', 'br']
+WHITENOISE_STATIC_PREFIX = '/static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

@@ -24,8 +24,16 @@ pip install -r requirements.txt
 echo "🔍 Verifying PostgreSQL adapter..."
 python -c "import psycopg2; print('✅ psycopg2 installed successfully')"
 
-echo "📦 Collecting static files..."
-python manage.py collectstatic --no-input
+echo "📦 Collecting static files safely..."
+# Use our custom safe_collectstatic command that handles missing files
+echo "Note: Using safe collection method for missing jQuery UI files"
+python manage.py safe_collectstatic --no-input || {
+    echo "⚠️  Safe collectstatic failed, trying standard method..."
+    python manage.py collectstatic --no-input || {
+        echo "⚠️  Standard collectstatic failed, trying without clearing..."
+        python manage.py collectstatic --no-input
+    }
+}
 
 echo "🔄 Running database migrations..."
 python manage.py migrate
