@@ -18,11 +18,14 @@ class Command(BaseCommand):
                 return
             
             # Create default superuser
+            # Since this app uses email for authentication, set both username and email
             user = User.objects.create_superuser(
+                username='admin@college.edu',  # Use email as username
                 email='admin@college.edu',
                 password='admin123',
                 first_name='Admin',
-                last_name='User'
+                last_name='User',
+                user_type=1  # Set as HOD (admin type)
             )
             
             self.stdout.write(

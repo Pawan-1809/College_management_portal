@@ -38,7 +38,10 @@ python manage.py migrate
 echo "👤 Creating default superuser if needed..."
 python manage.py create_default_superuser || {
     echo "⚠️  Custom command failed, trying alternative..."
-    echo "from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.create_superuser('admin@college.edu', 'admin123', first_name='Admin', last_name='User') if not User.objects.filter(is_superuser=True).exists() else print('Superuser exists')" | python manage.py shell
+    echo "from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.create_superuser(username='admin@college.edu', email='admin@college.edu', password='admin123', first_name='Admin', last_name='User', user_type=1) if not User.objects.filter(is_superuser=True).exists() else print('Superuser exists')" | python manage.py shell
 }
+
+echo "📋 Listing created users for verification..."
+python manage.py list_users
 
 echo "✅ Build completed successfully!"
