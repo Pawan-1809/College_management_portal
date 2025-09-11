@@ -1,0 +1,37 @@
+databases:
+  - name: college-portal-db
+    databaseName: college_management_db
+    user: college_user
+    plan: free
+
+services:
+  - type: web
+    name: college-management-portal
+    runtime: python3
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn student_management_system.wsgi:application --bind 0.0.0.0:$PORT"
+    plan: free
+    healthCheckPath: /
+    envVars:
+      - key: BUILD_COMMAND
+        value: "./build.sh"
+      - key: PYTHON_VERSION
+        value: "3.9.19"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: college-portal-db
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: "False"
+      - key: ALLOWED_HOSTS
+        value: "*"
+      - key: WEB_CONCURRENCY
+        value: "4"
+      - key: SECURE_SSL_REDIRECT
+        value: "False"
+      - key: SESSION_COOKIE_SECURE
+        value: "False"
+      - key: CSRF_COOKIE_SECURE
+        value: "False"
