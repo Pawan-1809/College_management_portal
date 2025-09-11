@@ -24,16 +24,13 @@ pip install -r requirements.txt
 echo "🔍 Verifying PostgreSQL adapter..."
 python -c "import psycopg2; print('✅ psycopg2 installed successfully')"
 
-echo "📦 Collecting static files safely..."
-# Use our custom safe_collectstatic command that handles missing files
-echo "Note: Using safe collection method for missing jQuery UI files"
-python manage.py safe_collectstatic --no-input || {
-    echo "⚠️  Safe collectstatic failed, trying standard method..."
-    python manage.py collectstatic --no-input || {
-        echo "⚠️  Standard collectstatic failed, trying without clearing..."
-        python manage.py collectstatic --no-input
-    }
-}
+echo "🔧 Fixing jQuery UI CSS file paths..."
+python fix_jquery_ui.py
+
+echo "📦 Collecting static files..."
+# Use basic Django static files storage (no manifest processing)
+echo "Using basic static files storage - jQuery UI paths have been fixed"
+python manage.py collectstatic --no-input --clear
 
 echo "🔄 Running database migrations..."
 python manage.py migrate
