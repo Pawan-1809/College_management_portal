@@ -362,21 +362,26 @@ def add_student_save(request):
 
             try:
                 user = CustomUser.objects.create_user(username=username, password=password, email=email, first_name=first_name, last_name=last_name, user_type=3)
-                user.students.address = address
+                user.save()
+                
+                # Get the automatically created student profile
+                student = user.students
+                student.address = address
 
                 course_obj = Courses.objects.get(id=course_id)
-                user.students.course_id = course_obj
+                student.course_id = course_obj
 
                 session_year_obj = SessionYearModel.objects.get(id=session_year_id)
-                user.students.session_year_id = session_year_obj
+                student.session_year_id = session_year_obj
 
-                user.students.gender = gender
-                user.students.profile_pic = profile_pic_url
-                user.save()
+                student.gender = gender
+                student.profile_pic = profile_pic_url
+                student.save()
+                
                 messages.success(request, "Student Added Successfully!")
                 return redirect('add_student')
-            except:
-                messages.error(request, "Failed to Add Student!")
+            except Exception as e:
+                messages.error(request, f"Failed to Add Student! Error: {str(e)}")
                 return redirect('add_student')
         else:
             return redirect('add_student')
