@@ -102,9 +102,18 @@ A default superuser is created with:
 ### Common Issues
 
 1. **Build Fails with Python Version Error**
-   - Render uses Python 3.9.19 as specified in `runtime.txt`
-   - If you see version conflicts, check `requirements.txt`
+   - **CRITICAL**: Render may ignore version specifications and default to Python 3.13
+   - **Manual Fix Required**: In your Render dashboard:
+     a. Go to your Web Service settings
+     b. Click "Environment" tab
+     c. Add environment variable: `PYTHON_VERSION` = `3.9.19`
+     d. Redeploy the service
+   - Multiple fallbacks are configured:
+     - `.python-version` file with `3.9.19`
+     - `runtime.txt` with `python-3.9.19`
+     - `PYTHON_VERSION` environment variable in `render.yaml`
    - Django 3.2.25 is specifically chosen for Python 3.9 compatibility
+   - If still using Python 3.13, the build will fail early with clear error message
 
 2. **Database Connection Error**
    - Verify `DATABASE_URL` is correctly set

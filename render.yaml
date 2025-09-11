@@ -8,8 +8,7 @@ services:
   - type: web
     name: college-management-portal
     runtime: python3
-    pythonVersion: "3.9"
-    buildCommand: "./build.sh"
+    buildCommand: "chmod +x pre-build.sh && ./pre-build.sh && chmod +x build.sh && ./build.sh"
     startCommand: "gunicorn student_management_system.wsgi:application --bind 0.0.0.0:$PORT"
     plan: free
     healthCheckPath: /

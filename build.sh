@@ -4,6 +4,17 @@ set -o errexit
 
 echo "🚀 Starting Render deployment build process..."
 
+echo "🔍 Checking Python version..."
+python --version
+PYTHON_VER=$(python -c "import sys; print(f'{sys.version_info.major}.{sys.version_info.minor}')")
+echo "Detected Python version: $PYTHON_VER"
+if [[ "$PYTHON_VER" != "3.9" ]]; then
+    echo "❌ Error: Expected Python 3.9, but got Python $PYTHON_VER"
+    echo "Please check PYTHON_VERSION environment variable and .python-version file"
+    exit 1
+fi
+echo "✅ Python 3.9 confirmed"
+
 echo "🔧 Upgrading pip..."
 pip install --upgrade pip
 
