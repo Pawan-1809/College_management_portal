@@ -1,263 +1,254 @@
-# Django Student Attendance System
+<div align="center">
 
-This is a Student Attendance System Developed for Educational Purpose using Python (Django).
+# 🎓 Heritage College Management Portal
 
-And if you like this project then ADD a STAR ⭐️ to this project 👆
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=22&duration=3000&pause=1000&color=00D4AA&center=true&vCenter=true&width=435&lines=Student+Management+System;Built+with+Django+%F0%9F%90%8D;Heritage+Institute+of+Technology" alt="Typing SVG" />
 
-## System Preview
+[![Django](https://img.shields.io/badge/Django-3.2.25-092E20?style=for-the-badge&logo=django&logoColor=white)](https://www.djangoproject.com/)
+[![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![Render](https://img.shields.io/badge/Deployed%20on-Render-46E3B7?style=for-the-badge&logo=render&logoColor=white)](https://render.com/)
 
-![College Management Portal Dashboard](screenshots/dashboard.png)
+<p align="center">
+  <a href="#-features">Features</a> •
+  <a href="#-quick-start">Quick Start</a> •
+  <a href="#-live-demo">Live Demo</a> •
+  <a href="#-tech-stack">Tech Stack</a> •
+  <a href="#-contributors">Contributors</a>
+</p>
 
-## Features of this Project
+---
 
-### A. Admin Users Can
+🌟 **A comprehensive college management system for Heritage Institute of Technology** 🌟
 
-1. See Overall Summary Charts of Stuudents Performance, Staffs Perfomrances, Courses, Subjects, Leave, etc.
-2. Manage Staffs (Add, Update and Delete)
-3. Manage Students (Add, Update and Delete)
-4. Manage Course (Add, Update and Delete)
-5. Manage Subjects (Add, Update and Delete)
-6. Manage Sessions (Add, Update and Delete)
-7. View Student Attendance
-8. Review and Reply Student/Staff Feedback
-9. Review (Approve/Reject) Student/Staff Leave
+</div>
 
-### B. Staff/Teachers Can
+## 🚀 Live Demo
 
-1. See the Overall Summary Charts related to their students, their subjects, leave status, etc.
-2. Take/Update Students Attendance
-3. Add/Update Result
-4. Apply for Leave
-5. Send Feedback to HOD
+<div align="center">
 
-### C. Students Can
+### 🌐 **[college-management-portal.onrender.com](https://college-management-portal.onrender.com)**
 
-1. See the Overall Summary Charts related to their attendance, their subjects, leave status, etc.
-2. View Attendance
-3. View Result
-4. Apply for Leave
-5. Send Feedback to HOD
+![Dashboard Preview](https://img.shields.io/badge/Status-Live-brightgreen?style=for-the-badge)
 
-## 🚀 Quick Deployment Options
+**Test Credentials:**
+- 👑 **Admin**: `admin@college.edu` / `admin123`
+- 👨‍🏫 **Staff**: `staff@college.edu` / `staff123`
+- 👨‍🎓 **Student**: `student@college.edu` / `student123`
 
-### ⚡ Automated Setup (Recommended)
+</div>
 
-**For Local Development:**
+## ✨ Features
+
+<table>
+<tr>
+<td width="33%">
+
+### 👑 **Admin/HOD Panel**
+
+- 📈 **Dashboard Analytics** - Performance charts & insights
+- 👥 **Staff Management** - Add, update, delete staff
+- 👨‍🎓 **Student Management** - Complete student lifecycle
+- 📚 **Course Management** - Academic program control
+- 📖 **Subject Management** - Curriculum organization
+- 📅 **Session Management** - Academic year planning
+- 📊 **Attendance Overview** - Monitor all classes
+- 💬 **Feedback System** - Review & respond
+- 🏖️ **Leave Management** - Approve/reject requests
+
+</td>
+<td width="33%">
+
+### 👨‍🏫 **Staff/Teacher Portal**
+
+- 📉 **Personal Dashboard** - Teaching insights
+- ✅ **Attendance Tracking** - Mark & update attendance
+- 📝 **Result Management** - Grade & assess students
+- 📊 **Performance Reports** - Student progress
+- 🏖️ **Leave Application** - Request time off
+- 💬 **Feedback Channel** - Communicate with HOD
+- 📚 **Subject Overview** - Teaching assignments
+- 📅 **Schedule View** - Class timetables
+
+</td>
+<td width="33%">
+
+### 👨‍🎓 **Student Dashboard**
+
+- 📈 **Academic Dashboard** - Personal progress
+- 📊 **Attendance View** - Track your presence
+- 🏆 **Results Portal** - Grades & assessments
+- 📚 **Subject Details** - Course information
+- 📅 **Academic Calendar** - Important dates
+- 🏖️ **Leave Request** - Apply for absence
+- 💬 **Feedback System** - Share concerns
+- 📝 **Profile Management** - Update personal info
+
+</td>
+</tr>
+</table>
+
+## 🚀 Quick Start
+
+### 💻 **Local Development**
+
 ```bash
-chmod +x setup-local.sh
-./setup-local.sh
+# 1. Clone the repository
+git clone https://github.com/Pawan-1809/College_management_portal.git
+cd College_management_portal
+
+# 2. Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# 3. Install dependencies
+pip install -r requirements.txt
+
+# 4. Environment setup
+cp .env.example .env
+# Edit .env file with your configuration
+
+# 5. Run migrations
+python manage.py migrate
+
+# 6. Create superuser (optional)
+python manage.py createsuperuser
+
+# 7. Start development server
+python manage.py runserver
 ```
 
-**For Heroku Deployment:**
-```bash
-chmod +x deploy-heroku.sh
-./deploy-heroku.sh
-```
+### 📦 **One-Click Deploy**
 
-**For Docker Deployment:**
-```bash
-chmod +x deploy-docker.sh
-./deploy-docker.sh
-```
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Pawan-1809/College_management_portal)
 
-📋 **For detailed deployment instructions, see [DEPLOYMENT.md](DEPLOYMENT.md)**
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Pawan-1809/College_management_portal)
 
-## How to Install and Run this project?
+## 🛠️ Tech Stack
 
-### Pre-Requisites:
+<div align="center">
 
-1. Install Git Version Control
-   [ https://git-scm.com/ ]
+| Category | Technology | Purpose |
+|----------|------------|----------|
+| **Backend** | ![Django](https://img.shields.io/badge/-Django-092E20?style=flat-square&logo=django&logoColor=white) | Web Framework |
+| **Database** | ![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-316192?style=flat-square&logo=postgresql&logoColor=white) ![SQLite](https://img.shields.io/badge/-SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white) | Data Storage |
+| **Frontend** | ![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=flat-square&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black) | User Interface |
+| **Styling** | ![Bootstrap](https://img.shields.io/badge/-Bootstrap-7952B3?style=flat-square&logo=bootstrap&logoColor=white) | UI Components |
+| **Deployment** | ![Render](https://img.shields.io/badge/-Render-46E3B7?style=flat-square&logo=render&logoColor=white) | Cloud Hosting |
+| **Storage** | ![WhiteNoise](https://img.shields.io/badge/-WhiteNoise-9146FF?style=flat-square) | Static Files |
 
-2. Install Python Latest Version (3.9+)
-   [ https://www.python.org/downloads/ ]
+</div>
 
-3. Install Pip (Package Manager)
-   [ https://pip.pypa.io/en/stable/installing/ ]
-
-_Alternative to Pip is Homebrew_
-
-### Installation
-
-**1. Create a Folder where you want to save the project**
-
-**2. Create a Virtual Environment and Activate**
-
-Install Virtual Environment First
+## 📁 Project Structure
 
 ```
-$  pip install virtualenv
+College-management-portal/
+├── 📁 student_management_app/
+│   ├── 👑 management/commands/     # Custom Django commands
+│   ├── 📋 templates/           # HTML templates
+│   ├── 🔄 migrations/          # Database migrations
+│   └── 📝 models.py            # Database models
+├── 🎨 static/                  # Static files (CSS, JS, Images)
+├── 🗺️ media/                   # User uploaded files
+├── ⚙️ student_management_system/ # Main project settings
+└── 📦 requirements.txt         # Python dependencies
 ```
 
-Create Virtual Environment
+## 🔧 Configuration
 
-For Windows
-
-```
-$  python -m venv venv
-```
-
-For Mac
-
-```
-$  python3 -m venv venv
-```
-
-Activate Virtual Environment
-
-For Windows
-
-```
-$  venv\scripts\activate
-```
-
-For Mac
-
-```
-$  venv\bin\activate
-```
-
-**3. Clone this project**
-
-```
-$  git clone (gitlink)
-```
-
-Then, Enter the project
-
-```
-$  cd django-student-attendance-system
-```
-
-**4. Install Requirements from 'requirements.txt'**
-
-```python
-$  pip install -r requirements.txt
-```
-
-**5. Add the hosts**
-
-- Got to settings.py file
-- Then, On allowed hosts, Add [‘*’].
-
-```python
-ALLOWED_HOSTS = ['*']
-```
-
-_No need to change on Mac._
-
-**6. Now Run Server**
-
-Command for PC:
-
-```python
-$ python manage.py runserver
-```
-
-Command for Mac:
-
-```python
-$ python3 manage.py runserver
-```
-
-**7. Login Credentials**
-
-Create Super User (HOD)
-
-```
-$  python manage.py createsuperuser
-```
-
-Then Add Email, Username and Password
-
-**or Use Default Credentials**
-
-_For HOD /SuperAdmin_
-Email: admin@gmail.com
-Password: admin
-
-_For Staff_
-Email: staff@gmail.com
-Password: staff
-
-_For Student_
-Email: student@gmail.com
-Password: student
-
-## 🔧 Environment Variables
-
-The project uses environment variables for configuration. Copy `.env.example` to `.env` and update with your values:
+<details>
+<summary><b>🔍 Click to expand environment variables</b></summary>
 
 ```env
 # Django Configuration
 SECRET_KEY=your-secret-key-here
-DEBUG=False
-ALLOWED_HOSTS=yourdomain.com,www.yourdomain.com,localhost
+DEBUG=True  # Set to False in production
+ALLOWED_HOSTS=localhost,127.0.0.1,yourdomain.com
 
-# Database Configuration
-DB_ENGINE=django.db.backends.postgresql
-DB_NAME=college_management_db
-DB_USER=your_db_user
-DB_PASSWORD=your_db_password
-DB_HOST=localhost
-DB_PORT=5432
+# Database (SQLite for development)
+DB_ENGINE=django.db.backends.sqlite3
+DB_NAME=db.sqlite3
 
-# Security Settings (Production)
-SECURE_SSL_REDIRECT=True
-SESSION_COOKIE_SECURE=True
-CSRF_COOKIE_SECURE=True
+# Security Settings
+SECURE_SSL_REDIRECT=False  # Set to True in production
+SESSION_COOKIE_SECURE=False
+CSRF_COOKIE_SECURE=False
 ```
 
-See `.env.example` for all available configuration options.
+</details>
 
-## 🐳 Docker Deployment
+## 🛡️ Security Features
 
-Quick deployment using Docker:
+- 🔐 **Email-based Authentication** - Secure login system
+- 👥 **Role-based Access Control** - Admin, Staff, Student roles
+- 🌐 **CSRF Protection** - Cross-site request forgery prevention
+- 📜 **Input Validation** - SQL injection protection
+- 🔒 **Session Management** - Secure session handling
+- 🏆 **Production Ready** - SSL/HTTPS support
 
-```bash
-# Build and run with Docker Compose
-docker-compose up -d
+## 👥 Contributors
 
-# Run migrations
-docker-compose exec web python manage.py migrate
+<div align="center">
 
-# Create superuser
-docker-compose exec web python manage.py createsuperuser
-```
+### 🌟 **Development Team**
 
-## ☁️ Cloud Deployment
+<table>
+<tr>
+  <td align="center">
+    <img src="https://github.com/Pawan-1809.png" width="100px" alt="Pawan Kumar"/><br>
+    <b>Pawan Kumar</b><br>
+    👑 <i>Project Lead</i><br>
+    <a href="https://github.com/Pawan-1809">🔗 GitHub</a>
+  </td>
+  <td align="center">
+    <img src="https://via.placeholder.com/100x100/0066cc/ffffff?text=AK" width="100px" alt="Ankit Raj"/><br>
+    <b>Ankit Raj</b><br>
+    💻 <i>Full Stack Developer</i><br>
+  </td>
+  <td align="center">
+    <img src="https://via.placeholder.com/100x100/009933/ffffff?text=PS" width="100px" alt="Prince Sen Gupta"/><br>
+    <b>Prince Sen Gupta</b><br>
+    🎨 <i>Frontend Developer</i><br>
+  </td>
+  <td align="center">
+    <img src="https://via.placeholder.com/100x100/cc3300/ffffff?text=MV" width="100px" alt="Mahima Vasisth"/><br>
+    <b>Mahima Vasisth</b><br>
+    📊 <i>Backend Developer</i><br>
+  </td>
+</tr>
+</table>
 
-### Heroku
-```bash
-# Create app and deploy
-heroku create your-app-name
-heroku addons:create heroku-postgresql:hobby-dev
-heroku config:set SECRET_KEY="your-secret-key"
-heroku config:set DEBUG=False
-git push heroku main
-heroku run python manage.py migrate
-```
+### 🏠 **Heritage Institute of Technology**
+*Design Thinking and Innovation Lab*
 
-### Production Security
+---
 
-⚠️ **Important for Production:**
-- Set `DEBUG=False`
-- Use PostgreSQL instead of SQLite
-- Configure proper `ALLOWED_HOSTS`
-- Enable HTTPS/SSL
-- Set secure cookie flags
-- Use environment variables for secrets
+### 💖 **Support the Project**
 
-## Copyrights
+If you find this project helpful, please consider:
 
-Coded by @pawan_kumar , @ankit_raj, @prince_sen_gupta, @mahima_vasisth
+[![GitHub Stars](https://img.shields.io/github/stars/Pawan-1809/College_management_portal?style=social)](https://github.com/Pawan-1809/College_management_portal/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/Pawan-1809/College_management_portal?style=social)](https://github.com/Pawan-1809/College_management_portal/network/members)
 
-Developed for Design Thinking and idea lab, heritage inititute of technology, kolkata
+</div>
 
-Copyright 2024 @pawan_kumar
+## 📝 License
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+<div align="center">
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+**MIT License** © 2024 **Pawan Kumar**
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+<p align="center">
+  <b>🎆 Made with ❤️ in Kolkata, India</b><br>
+  <i>Heritage Institute of Technology</i>
+</p>
+
+<p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=16&duration=2000&pause=1000&color=00D4AA&center=true&vCenter=true&width=600&lines=Thank+you+for+visiting+our+project!;%E2%AD%90+Star+us+on+GitHub+if+you+found+it+helpful!;Built+with+Django+and+%E2%9D%A4%EF%B8%8F+by+Heritage+Team" alt="Footer Typing SVG" />
+</p>
+
+</div>
