@@ -41,6 +41,15 @@ python manage.py create_default_superuser || {
     echo "from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.create_superuser(username='admin@college.edu', email='admin@college.edu', password='admin123', first_name='Admin', last_name='User', user_type=1) if not User.objects.filter(is_superuser=True).exists() else print('Superuser exists')" | python manage.py shell
 }
 
+echo "🔧 Ensuring proper admin user exists..."
+# Delete any malformed users first
+echo "Cleaning up any malformed admin users..."
+echo "from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.filter(username='admin@college.edu').delete(); print('Cleaned up old users')" | python manage.py shell
+
+# Create fresh admin user
+echo "Creating fresh admin user with correct email field..."
+echo "from django.contrib.auth import get_user_model; User = get_user_model(); user = User.objects.create_superuser(username='admin@college.edu', email='admin@college.edu', password='admin123', first_name='Admin', last_name='User', user_type=1); print(f'Created: {user.username} | Email: {user.email} | Superuser: {user.is_superuser}')" | python manage.py shell
+
 echo "📋 Listing created users for verification..."
 python manage.py list_users
 
